@@ -1,8 +1,9 @@
 [build]
-target = "avr-specs/avr-atmega328p.json"
+target = "avr-none"
 
 [target.'cfg(target_arch = "avr")']
 runner = "ravedude uno -cb 57600"
+rustflags = ["-Ctarget-cpu=atmega328p"]
 
 [unstable]
 build-std = ["core"]
